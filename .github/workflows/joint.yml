@@ -1,0 +1,25 @@
+name: 🚀 Deploy manually to pos254.wuaze.com 
+
+on:
+  workflow_dispatch: # Allows manual triggering of the workflow
+
+jobs:
+
+  # Deploy to pos254.wuaze.com
+  deploy-to-pos254:
+    name: 🎉 Deploy to pos254.wuaze.com
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+
+      - name: 📂 Sync files to pos254.wuaze.com
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftpupload.net
+          username: if0_37114096
+          password: QcIDYuIrKJ # Store sensitive data in GitHub Secrets
+          server-dir: pos.wuaze.com/htdocs/
+          retries: 3                 # Retry the connection up to 3 times in case of timeout
+          retryDelay: 10             # Wait 10 seconds before retrying after a failure
