@@ -12,7 +12,7 @@ if ($host === 'localhost') {
         'password' => 'root',
         'charset' => 'utf8',
     ];
-} elseif ($host === 'pos.wuaze.com') {
+} elseif ($host === 'pos254.wuaze.com') {
     // Production environment for wuaze.com
     return [
         'class' => 'yii\db\Connection',
