@@ -235,3 +235,4 @@ You can see code coverage output under the `tests/_output` directory.
 # school-management
 # school-management
 # pos
+# pos
